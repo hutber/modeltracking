@@ -1,0 +1,10 @@
+extends default
+block content
+    form(action="/add", method="post")
+        input(placeholder="Model Name", name="name", value="#{model.name}")
+        input(placeholder="Army Name", name="army", value="#{model.army}")
+        label Own?
+            input(type="checkbox", name="own", value="1")
+        label Want?
+            input(type="checkbox", name="desire", value="1")
+        button(type="submit", value="Submit") Submit

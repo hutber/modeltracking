@@ -1,0 +1,175 @@
+//
+// Inputs
+// --------------------------------------------------
+
+// Text fields
+textarea,
+input,
+select {
+	border: 0;
+	background: $inputbg;
+	color: $headerColor;
+	font-size: 2.4rem;
+	line-height: 2rem;
+	margin-bottom: gutter(12);
+	padding: 0.5rem 1rem;
+	width: 100%;
+	text-indent: 7px;
+	font-weight: bold;
+	font-family: $font;
+	-webkit-appearance: none;
+	-webkit-user-select: auto !important;
+	@include box-shadow(none);
+	@include placeholder-color($headerColor);
+	@include transition(0.25s);
+
+	// Alternate Colors
+	// --------------------------------------------------
+	&.error, .submitted &.ng-invalid {
+		@include input-states($danger);
+	}
+	&.success {
+		@include input-states($success);
+	}
+	&.warning {
+		@include input-states($warning);
+	}
+	.control-group.info & {
+		@include input-states($info);
+	}
+
+	//  .control-group & { margin-bottom: 0; }
+}
+
+label.error, label.error a {
+	@include input-states($danger);
+}
+
+// INPUT ICONS
+// ----------------------
+.control-group {
+	position: relative;
+	label {
+		font-size: .8em;
+		&.error, &.error a {
+			@include input-states($danger);
+		}
+	}
+	> .input-icon {
+		position: absolute;
+		top: 2px;
+		right: 2px;
+		vertical-align: middle;
+		color: desaturate(lighten($textColor, 45%), 15%);
+		background-color: #ffffff;
+		padding: 0 10px;
+		border-radius: 6px;
+	}
+
+	input:focus + .input-icon {
+		color: $textColor;
+	}
+
+	// Icon Sizes
+	// --------------------------------------------------
+
+	// Huge
+	&.huge {
+		> .input-icon {
+		}
+	}
+
+	//Large
+	&.large {
+		> .input-icon {
+		}
+	}
+
+	// Small
+	&.small {
+		> .input-icon {
+		}
+	}
+
+	// Icon Colors
+	// --------------------------------------------------
+	&.success {
+		> .input-icon, input + .input-icon {
+			color: $success;
+		}
+	}
+	&.warning {
+		> .input-icon, input + .input-icon {
+			color: $warning;
+		}
+	}
+	&.error {
+		> .input-icon, input + .input-icon {
+			color: $danger;
+		}
+	}
+	&.disabled {
+		> .input-icon, input + .input-icon {
+			color: mix($border, white, 40%);
+			background-color: mix($border, white, 10%);
+		}
+	}
+
+}
+
+// Disabled state
+input[disabled],
+//input[readonly],
+textarea[disabled],
+select[disabled],
+textarea[readonly] {
+	background-color: mix($border, white, 10%);
+	border-color: mix($border, white, 40%);
+	color: mix($border, white, 40%);
+	cursor: default;
+}
+
+//Buttons
+
+.btn, button {
+	padding: 0px 0px;
+	font: 300 12px/15px "Ubuntu", sans-serif;
+	color: $headerColor;
+	background: none;
+	border: none;
+	white-space: normal;
+	text-transform: uppercase;
+	letter-spacing: -1px;
+	cursor: pointer;
+	&:hover {
+		color: $header;
+	}
+}
+
+// Textarea
+textarea {
+	height: auto;
+	padding: 5px 11px;
+	text-indent: 0;
+
+	.row-fluid & {
+		height: auto;
+		width: 100% !important;
+	}
+}
+
+
+select {
+	padding-left: 0;
+	color: $headerColor;
+	text-indent: 3px;
+}
+
+input[type=checkbox] {
+	padding: 6px;
+	display: inline-block;
+	vertical-align: middle;
+	&:checked {
+		background: #000;
+	}
+}

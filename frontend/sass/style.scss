@@ -1,0 +1,88 @@
+@import "susy";
+
+/* #Config ------------------------------------------------------------------------ */
+$global-width: 1140px;
+
+$susy: (
+	global-box-sizing: border-box,
+	use-custom: (rem: true),
+	columns: 12,
+	gutters: 1/4,
+	debug: (
+		image: hide,
+		color: rgba(#66f, .25),
+		output: background,
+		toggle: top right,
+	)
+);
+@include border-box-sizing;
+
+/* #Imports dependencies ------------------------------------------------------------------------ */
+@import
+"_reset",
+"_fontello",
+"_mixins",
+"_variables",
+"_typography",
+"modules/_forms",
+"modules/_input";
+/*
+==================================================
+Table of Contents
+==================================================
+#Global Settings
+*/
+#__bs_notify__ {opacity: .1; pointer-events: none;}
+
+/* #Main Styles ---------------------------------------------------------- */
+body {
+	display: block;
+	background: $bg;
+}
+
+/* #Shell ---------------------------------------------------------- */
+
+	/* #header ---------------------------------------------------------- */
+	.header {
+		height: 15%;
+		width: 100%;
+		position: absolute;
+		top: 0;
+		left: 0;
+		text-align: center;
+		@include clear;
+	}
+	/* #Content ---------------------------------------------------------- */
+	.content {
+		height: 70%;
+		width: 100%;
+		position: absolute;
+		top: 15%;
+		left: 0;
+		display: block;
+		@include clear;
+		& > div {
+			width: 90%;
+			@include vertical-middle;
+		}
+	}
+	/* #Footer ---------------------------------------------------------- */
+	.footer {
+		height: 15%;
+		width: 100%;
+		position: absolute;
+		top: 85%;
+		left: 0;
+		text-align: center;
+		background: $inputbg;
+		color: $header;
+		@include clear;
+		& > a {
+			height: 100%;
+			display: block;
+			& span {
+				width: 100%;
+				@include vertical-middle;
+			}
+		}
+	}

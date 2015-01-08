@@ -1,0 +1,64 @@
+/* Table of Contents
+==================================================
+		#Imported Fonts
+    #Fonts
+    #Typography
+    #Blockquotes
+    #Links
+    #Lists
+		#Images
+		#Figures
+		#Tables
+		#File Types
+		#RTL Overrides
+*/
+/* #Imported Fonts ------------------------------------------------------------------------ */
+@font-face {
+	font-family: 'font';
+	src: url('fonts/firstv2-webfont.eot');
+	src: url('fonts/firstv2-webfont.eot?#iefix') format('embedded-opentype'),
+	url('fonts/firstv2-webfont.woff2') format('woff2'),
+	url('fonts/firstv2-webfont.woff') format('woff'),
+	url('fonts/firstv2-webfont.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'fontlight';
+	src: url('fonts/firstv2l-webfont.eot');
+	src: url('fonts/firstv2l-webfont.eot?#iefix') format('embedded-opentype'),
+	url('fonts/firstv2l-webfont.woff2') format('woff2'),
+	url('fonts/firstv2l-webfont.woff') format('woff'),
+	url('fonts/firstv2l-webfont.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+
+
+$font: font, "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+$fontlight: fontlight, "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+$textColor: #FFF;
+
+/* #Text shadow default effects ------------------------------------------------------------------------ */
+$textshadowcolor: rgba(black, 0.3);
+$textshadowcolorblue: 3px;
+$textshadowcoloroffset: 1px;
+
+/* #Page Typography ------------------------------------------------------------------------ */
+body {padding: 0; margin:0; font-family: $font; color: $textColor; font-size: 2rem;}
+
+// #Links ---------------------------------------------------------------------
+a {color:$header;}
+a:hover, a:focus { }
+
+// #Headers -------------------------------------------------------------------
+h1, h2, h3, h4, h5, h6 {
+	color: #fff;
+	font-family: $font;
+	font-weight: normal;
+	margin: 1rem 0;
+}
+
+h1 {
+	font-size: 2rem;
+}

@@ -1,0 +1,602 @@
+@charset "UTF-8";
+/* #Config ------------------------------------------------------------------------ */
+*, *:before, *:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box; }
+
+/* #Imports dependencies ------------------------------------------------------------------------ */
+/*
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+*/
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none;
+  margin: 0;
+  padding: 0; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: "";
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+@font-face {
+  font-family: 'fontello';
+  src: url("../fonts/fontello.eot?24134951");
+  src: url("../fonts/fontello.eot?24134951#iefix") format("embedded-opentype"), url("../fonts/fontello.woff?24134951") format("woff"), url("../fonts/fontello.ttf?24134951") format("truetype"), url("../fonts/fontello.svg?24134951#fontello") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+/* Chrome hack: SVG is rendered more smooth in Windozze. 100% magic, uncomment if you need it. */
+/* Note, that will break hinting! In other OS-es font will be not as sharp as it could be */
+/*
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  @font-face {
+    font-family: 'fontello';
+    src: url('../font/fontello.svg?24134951#fontello') format('svg');
+  }
+}
+*/
+[class^="icon-"]:before, [class*=" icon-"]:before {
+  font-family: "fontello";
+  font-style: normal;
+  font-weight: normal;
+  speak: none;
+  display: inline-block;
+  text-decoration: inherit;
+  width: 1em;
+  margin-right: .6em;
+  text-align: center;
+  /* opacity: .8; */
+  /* For safety - reset parent styles, that can break glyph codes*/
+  font-variant: normal;
+  text-transform: none;
+  /* fix buttons height, for twitter bootstrap */
+  /* Animation center compensation - margins should be symmetric */
+  /* remove if not needed */
+  margin-left: .2em;
+  /* you can be more comfortable with increased icons size */
+  /* font-size: 120%; */
+  /* Uncomment for 3D effect */
+  /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */ }
+
+.icon-spin3:before {
+  content: '\e817'; }
+
+/* '¯áù' */
+.icon-trash:before {
+  content: '\e824'; }
+
+/* '¯áñ' */
+.icon-male:before {
+  content: '\e825'; }
+
+/* '¯áÑ' */
+.icon-female:before {
+  content: '\e826'; }
+
+/* '¯áª' */
+.icon-ok-circled:before {
+  content: '\e803'; }
+
+/* '¯áâ' */
+.icon-cancel-circled:before {
+  content: '\e827'; }
+
+/* '¯áº' */
+.icon-plus-circled:before {
+  content: '\e804'; }
+
+/* '¯áä' */
+.icon-menu:before {
+  content: '\e800'; }
+
+/* '¯áÇ' */
+.icon-basket:before {
+  content: '\e80d'; }
+
+/* '¯áì' */
+.icon-login:before {
+  content: '\e810'; }
+
+/* '¯áÉ' */
+.icon-logout:before {
+  content: '\e811'; }
+
+/* '¯áæ' */
+.icon-clock:before {
+  content: '\e808'; }
+
+/* '¯áê' */
+.icon-left-big:before {
+  content: '\e81b'; }
+
+/* '¯áø' */
+.icon-globe:before {
+  content: '\e816'; }
+
+/* '¯áû' */
+.icon-list-bullet:before {
+  content: '\e821'; }
+
+/* '¯áí' */
+.icon-money:before {
+  content: '\e802'; }
+
+/* '¯áé' */
+.icon-down-open:before {
+  content: '\e822'; }
+
+/* '¯áó' */
+.icon-search:before {
+  content: '\e81a'; }
+
+/* '¯áÜ' */
+.icon-user:before {
+  content: '\e815'; }
+
+/* '¯áò' */
+.icon-user-add:before {
+  content: '\e819'; }
+
+/* '¯áÖ' */
+.icon-users:before {
+  content: '\e801'; }
+
+/* '¯áü' */
+.icon-lock:before {
+  content: '\e80e'; }
+
+/* '¯áÄ' */
+.icon-lock-filled:before {
+  content: '\e807'; }
+
+/* '¯áç' */
+.icon-lock-open:before {
+  content: '\e80f'; }
+
+/* '¯áÅ' */
+.icon-lock-open-filled:before {
+  content: '\e814'; }
+
+/* '¯áö' */
+.icon-pencil:before {
+  content: '\e809'; }
+
+/* '¯áë' */
+.icon-location:before {
+  content: '\e81d'; }
+
+/* '¯áØ' */
+.icon-map:before {
+  content: '\e81c'; }
+
+/* '¯á£' */
+.icon-cog-outline:before {
+  content: '\e80a'; }
+
+/* '¯áè' */
+.icon-wrench:before {
+  content: '\e80b'; }
+
+/* '¯áï' */
+.icon-calendar-outlilne:before {
+  content: '\e806'; }
+
+/* '¯áå' */
+.icon-calendar:before {
+  content: '\e805'; }
+
+/* '¯áà' */
+.icon-left-open:before {
+  content: '\e812'; }
+
+/* '¯áÆ' */
+.icon-down:before {
+  content: '\e823'; }
+
+/* '¯áú' */
+.icon-left:before {
+  content: '\e818'; }
+
+/* '¯áÿ' */
+.icon-globe-1:before {
+  content: '\e813'; }
+
+/* '¯áô' */
+.icon-chart-alt-outline:before {
+  content: '\e81e'; }
+
+/* '¯á×' */
+.icon-chart-bar-outline:before {
+  content: '\e81f'; }
+
+/* '¯áƒ' */
+.icon-chart-pie-outline:before {
+  content: '\e820'; }
+
+/* '¯áá' */
+.icon-home-outline:before {
+  content: '\e80c'; }
+
+/* '¯áî' */
+/*
+   Animation example, for spinners
+*/
+.animate-spin {
+  -moz-animation: spin 2s infinite linear;
+  -o-animation: spin 2s infinite linear;
+  -webkit-animation: spin 2s infinite linear;
+  animation: spin 2s infinite linear;
+  display: inline-block; }
+
+@-moz-keyframes spin {
+  0% {
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg); }
+  100% {
+    -moz-transform: rotate(359deg);
+    -o-transform: rotate(359deg);
+    -webkit-transform: rotate(359deg);
+    transform: rotate(359deg); } }
+@-webkit-keyframes spin {
+  0% {
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg); }
+  100% {
+    -moz-transform: rotate(359deg);
+    -o-transform: rotate(359deg);
+    -webkit-transform: rotate(359deg);
+    transform: rotate(359deg); } }
+@-o-keyframes spin {
+  0% {
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg); }
+  100% {
+    -moz-transform: rotate(359deg);
+    -o-transform: rotate(359deg);
+    -webkit-transform: rotate(359deg);
+    transform: rotate(359deg); } }
+@-ms-keyframes spin {
+  0% {
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg); }
+  100% {
+    -moz-transform: rotate(359deg);
+    -o-transform: rotate(359deg);
+    -webkit-transform: rotate(359deg);
+    transform: rotate(359deg); } }
+@keyframes spin {
+  0% {
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg); }
+  100% {
+    -moz-transform: rotate(359deg);
+    -o-transform: rotate(359deg);
+    -webkit-transform: rotate(359deg);
+    transform: rotate(359deg); } }
+/* Table of Contents
+==================================================
+    #Base
+*/
+/* Table of Contents
+==================================================
+		#Imported Fonts
+    #Fonts
+    #Typography
+    #Blockquotes
+    #Links
+    #Lists
+		#Images
+		#Figures
+		#Tables
+		#File Types
+		#RTL Overrides
+*/
+/* #Imported Fonts ------------------------------------------------------------------------ */
+@font-face {
+  font-family: 'font';
+  src: url("fonts/firstv2-webfont.eot");
+  src: url("fonts/firstv2-webfont.eot?#iefix") format("embedded-opentype"), url("fonts/firstv2-webfont.woff2") format("woff2"), url("fonts/firstv2-webfont.woff") format("woff"), url("fonts/firstv2-webfont.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal; }
+@font-face {
+  font-family: 'fontlight';
+  src: url("fonts/firstv2l-webfont.eot");
+  src: url("fonts/firstv2l-webfont.eot?#iefix") format("embedded-opentype"), url("fonts/firstv2l-webfont.woff2") format("woff2"), url("fonts/firstv2l-webfont.woff") format("woff"), url("fonts/firstv2l-webfont.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal; }
+/* #Text shadow default effects ------------------------------------------------------------------------ */
+/* #Page Typography ------------------------------------------------------------------------ */
+body {
+  padding: 0;
+  margin: 0;
+  font-family: font, "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  color: #FFF;
+  font-size: 2rem; }
+
+a {
+  color: #FC9F6D; }
+
+h1, h2, h3, h4, h5, h6 {
+  color: #fff;
+  font-family: font, "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-weight: normal;
+  margin: 1rem 0; }
+
+h1 {
+  font-size: 2rem; }
+
+.form-group {
+  margin-bottom: 2.5641%; }
+
+textarea,
+input,
+select {
+  border: 0;
+  background: #2B3846;
+  color: #A5B3CA;
+  font-size: 2.4rem;
+  line-height: 2rem;
+  margin-bottom: 1.69492%;
+  padding: 0.5rem 1rem;
+  width: 100%;
+  text-indent: 7px;
+  font-weight: bold;
+  font-family: font, "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  -webkit-appearance: none;
+  -webkit-user-select: auto !important;
+  box-shadow: none;
+  -moz-transition: 0.25s;
+  -o-transition: 0.25s;
+  -webkit-transition: 0.25s;
+  transition: 0.25s; }
+  textarea:-moz-placeholder,
+  input:-moz-placeholder,
+  select:-moz-placeholder {
+    color: #A5B3CA; }
+  textarea::-webkit-input-placeholder,
+  input::-webkit-input-placeholder,
+  select::-webkit-input-placeholder {
+    color: #A5B3CA; }
+  textarea.placeholder,
+  input.placeholder,
+  select.placeholder {
+    color: #A5B3CA; }
+  textarea.error, .submitted textarea.ng-invalid,
+  input.error, .submitted
+  input.ng-invalid,
+  select.error, .submitted
+  select.ng-invalid {
+    border-color: #e74c3c;
+    color: #e74c3c;
+    box-shadow: none; }
+    textarea.error:focus, .submitted textarea.ng-invalid:focus,
+    input.error:focus, .submitted
+    input.ng-invalid:focus,
+    select.error:focus, .submitted
+    select.ng-invalid:focus {
+      box-shadow: none; }
+  textarea.success,
+  input.success,
+  select.success {
+    border-color: #86C555;
+    color: #86C555;
+    box-shadow: none; }
+    textarea.success:focus,
+    input.success:focus,
+    select.success:focus {
+      box-shadow: none; }
+  textarea.warning,
+  input.warning,
+  select.warning {
+    border-color: #f1c40f;
+    color: #f1c40f;
+    box-shadow: none; }
+    textarea.warning:focus,
+    input.warning:focus,
+    select.warning:focus {
+      box-shadow: none; }
+  .control-group.info textarea, .control-group.info
+  input, .control-group.info
+  select {
+    border-color: #3498db;
+    color: #3498db;
+    box-shadow: none; }
+    .control-group.info textarea:focus, .control-group.info
+    input:focus, .control-group.info
+    select:focus {
+      box-shadow: none; }
+
+label.error, label.error a {
+  border-color: #e74c3c;
+  color: #e74c3c;
+  box-shadow: none; }
+  label.error:focus, label.error a:focus {
+    box-shadow: none; }
+
+.control-group {
+  position: relative; }
+  .control-group label {
+    font-size: .8em; }
+    .control-group label.error, .control-group label.error a {
+      border-color: #e74c3c;
+      color: #e74c3c;
+      box-shadow: none; }
+      .control-group label.error:focus, .control-group label.error a:focus {
+        box-shadow: none; }
+  .control-group > .input-icon {
+    position: absolute;
+    top: 2px;
+    right: 2px;
+    vertical-align: middle;
+    color: white;
+    background-color: #ffffff;
+    padding: 0 10px;
+    border-radius: 6px; }
+  .control-group input:focus + .input-icon {
+    color: #FFF; }
+  .control-group.success > .input-icon, .control-group.success input + .input-icon {
+    color: #86C555; }
+  .control-group.warning > .input-icon, .control-group.warning input + .input-icon {
+    color: #f1c40f; }
+  .control-group.error > .input-icon, .control-group.error input + .input-icon {
+    color: #e74c3c; }
+  .control-group.disabled > .input-icon, .control-group.disabled input + .input-icon {
+    color: #bec6d0;
+    background-color: #eef0f3; }
+
+input[disabled],
+textarea[disabled],
+select[disabled],
+textarea[readonly] {
+  background-color: #eef0f3;
+  border-color: #bec6d0;
+  color: #bec6d0;
+  cursor: default; }
+
+.btn, button {
+  padding: 0px 0px;
+  font: 300 12px/15px "Ubuntu", sans-serif;
+  color: #A5B3CA;
+  background: none;
+  border: none;
+  white-space: normal;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  cursor: pointer; }
+  .btn:hover, button:hover {
+    color: #FC9F6D; }
+
+textarea {
+  height: auto;
+  padding: 5px 11px;
+  text-indent: 0; }
+  .row-fluid textarea {
+    height: auto;
+    width: 100% !important; }
+
+select {
+  padding-left: 0;
+  color: #A5B3CA;
+  text-indent: 3px; }
+
+input[type=checkbox] {
+  padding: 6px;
+  display: inline-block;
+  vertical-align: middle; }
+  input[type=checkbox]:checked {
+    background: #000; }
+
+/*
+==================================================
+Table of Contents
+==================================================
+#Global Settings
+*/
+#__bs_notify__ {
+  opacity: .1;
+  pointer-events: none; }
+
+/* #Main Styles ---------------------------------------------------------- */
+body {
+  display: block;
+  background: #465568; }
+
+/* #Shell ---------------------------------------------------------- */
+/* #header ---------------------------------------------------------- */
+.header {
+  height: 15%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  text-align: center;
+  overflow: hidden; }
+
+/* #Content ---------------------------------------------------------- */
+.content {
+  height: 70%;
+  width: 100%;
+  position: absolute;
+  top: 15%;
+  left: 0;
+  display: block;
+  overflow: hidden; }
+  .content > div {
+    width: 90%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%); }
+
+/* #Footer ---------------------------------------------------------- */
+.footer {
+  height: 15%;
+  width: 100%;
+  position: absolute;
+  top: 85%;
+  left: 0;
+  text-align: center;
+  background: #2B3846;
+  color: #FC9F6D;
+  overflow: hidden; }
+  .footer > a {
+    height: 100%;
+    display: block; }
+    .footer > a span {
+      width: 100%;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      -webkit-transform: translate(-50%, -50%);
+      -moz-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%); }
+
+/*# sourceMappingURL=style.css.map */

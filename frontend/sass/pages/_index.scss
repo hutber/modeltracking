@@ -1,0 +1,130 @@
+/*
+==================================================
+Table of Contents
+==================================================
+#Slider & Stats
+#Login
+
+#Slider & Stats ------------------------------------------------------------------------ */
+$sliderLeft: 10%;
+$bottomLeft: 10%;
+$sliderStatsHeight: 578px;
+.sliderStats {
+	@include clear;
+	margin-bottom:  gutter(12);
+	.sliderShell {
+		position: relative;
+		@include span(8);
+		.controls {
+			display: block;
+			position: absolute;
+			z-index: 2;
+			bottom: $bottomLeft;
+			width: 100%;
+			left: $sliderLeft;
+			@include clear;
+			.block {
+				@include span(2);
+				height: 10px;
+				margin-right: 3px;
+				background: #FFF;
+				display: block;
+				cursor: pointer;
+				&:hover, &.active {
+					background: $softOrange;
+				}
+			}
+		}
+		.slider {
+			width: 100%;
+			height: 578px;
+			div {
+				h1, p	{
+					position: absolute;
+					bottom: ($bottomLeft * 2);
+					left: $sliderLeft;
+					color: #FFF;
+					margin: 10px 0;
+					display: block;
+					width: 80%;
+					text-align: left;
+				}
+				h1 {
+					font-size: 8rem;
+					line-height: 7rem;
+				}
+				p {
+					font-size: 1.1rem;
+					bottom: auto;
+					top: ($bottomLeft * 7.6)
+				}
+			}
+		}
+	}
+	.statsShell {
+		background: $softOrange;
+		height: $sliderStatsHeight;
+		color: #FFF;
+		position: relative;
+		@include span(4 last);
+		font-size: 1.7rem;
+		h2 {
+			font-size: 4.8rem;
+			margin: 0 0 1rem;
+			color: #FFF;
+			font-family: maysFont;
+			text-align: start;
+			text-shadow: none;
+		}
+		.stat {
+			margin: 1rem 0;
+			vertical-align: top;
+			position: relative;
+			font-size: 16rem;
+			line-height: 13rem;
+			@include clear;
+			.info {
+				font-size: 1.5rem;
+				line-height: 1rem;
+				position: absolute;
+				top: 4px;
+				right: 23%;
+			}
+		}
+		.statsCont {
+			width: 90%;
+			text-align: center;
+			@include vertical-middle;
+		}
+		a {
+			background: #fff;
+			padding: 10px 7px;
+			color: $softOrange;
+			display: inline-block;
+			margin-bottom: 1rem;
+		}
+		.gameDet {
+			font-size: 1rem;
+		}
+	}
+}
+
+.moreDetails {
+	margin-bottom: gutter(12);
+	padding-bottom: gutter(12);
+	background: $darkWhite;
+	@include clear;
+	> div {
+		@include span(4);
+		&:last-child {
+			@include span(4 last);
+		}
+	}
+	h3 {
+		text-align: left;
+		font-size: 2rem;
+		color: $headerGrey;
+	}
+}
+
+/* #Login ------------------------------------------------------------------------ */
